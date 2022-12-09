@@ -53,7 +53,7 @@ class Runned
         process.WaitForExit();
         timer.Stop();
 
-        string input = commands.Replace('\n', ' ');
+        string input = commands.Trim('\n');
         string output = process.StandardOutput.ReadToEnd();
 
         if (output == string.Empty) output = "None";
@@ -61,7 +61,7 @@ class Runned
         if (!noOutput)
         {
             Console.WriteLine("---- Output ----");
-            Console.WriteLine($"{output.Replace('\n', ' ')}");
+            Console.WriteLine($"{output.Trim('\n')}");
             Console.WriteLine("----------------\n");
         }
 
