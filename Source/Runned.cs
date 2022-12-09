@@ -13,6 +13,7 @@ class Runned
     private static bool exitCode = false;
     private static bool noOutput = false;
     private static bool timeDetail = false;
+    private static bool showInput = false;
 
     private static void WriteColoredLine(ConsoleColor color, string info, string message)
     {
@@ -25,25 +26,23 @@ class Runned
     private static void ExecuteCommand(string commands)
     {
         Stopwatch timer = new();
-        string systemTerminal = string.Empty;
+        string systemConsole = string.Empty;
+        string processCommands = string.Empty;
 
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         {
-            systemTerminal = "CMD.exe";
-            commands = $"/c {commands}";
+            systemConsole = "CMD.exe";
+            processCommands = $"/c {commands}";
         }
-        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) || RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
         {
-            systemTerminal = "/bin/bash";
-        }
-        else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-        {
-            systemTerminal = "sh";
+            systemConsole = "/bin/bash";
+            processCommands = $"-c \"{commands}\"";
         }
 
         timer.Start();
         using Process process = new();
-        process.StartInfo = new ProcessStartInfo(systemTerminal, commands)
+        process.StartInfo = new ProcessStartInfo(systemConsole, processCommands)
         {
             CreateNoWindow = true,
             UseShellExecute = false,
@@ -54,7 +53,7 @@ class Runned
         process.WaitForExit();
         timer.Stop();
 
-        string input = commands;
+        string input = commands.Replace('\n', ' ');
         string output = process.StandardOutput.ReadToEnd();
 
         if (output == string.Empty) output = "None";
@@ -62,10 +61,10 @@ class Runned
         if (!noOutput)
         {
             Console.WriteLine("---- Output ----");
-            Console.WriteLine($"{output.Trim('\n')}");
+            Console.WriteLine($"{output.Replace('\n', ' ')}");
             Console.WriteLine("----------------\n");
         }
-        
+
         if (!timeDetail)
         {
             WriteColoredLine(ConsoleColor.Green, "time", $"{timer.Elapsed:ss\\.fffff}");
@@ -76,6 +75,7 @@ class Runned
         }
 
         if (exitCode) WriteColoredLine(ConsoleColor.DarkGray, "exitcode", $"{process.ExitCode}");
+        if (showInput) WriteColoredLine(ConsoleColor.DarkGray, "input", $"{input}");
     }
 
     private static string ExtractArguments(string[] args)
@@ -87,18 +87,23 @@ class Runned
             switch (arg.ToLower())
             {
                 case "--exitcode":
-                case "-e":
+                case "-ec":
                     exitCode = true;
                     break;
 
                 case "--nooutput":
-                case "-n":
+                case "-no":
                     noOutput = true;
                     break;
 
                 case "--timedetail":
-                case "-t":
+                case "-td":
                     timeDetail = true;
+                    break;
+
+                case "--showinput":
+                case "-si":
+                    showInput = true;
                     break;
 
                 default:
@@ -132,9 +137,10 @@ class Runned
             WriteColoredLine(ConsoleColor.DarkGray, "usage", "Runned.exe [<your commands>]\n");
 
             WriteColoredLine(ConsoleColor.DarkGray, "options", "");
-            Console.WriteLine("  -e --exitcode    Display the exit code of the executed command.");
-            Console.WriteLine("  -n --nooutput    Disable the output.");
-            Console.WriteLine("  -t --timedetail  Add more detail to the elapsed time.");
+            Console.WriteLine("  -ec --exitcode    Display the exit code of the executed command.");
+            Console.WriteLine("  -no --nooutput    Disable the output.");
+            Console.WriteLine("  -td --timedetail  Add more detail to the elapsed time.");
+            Console.WriteLine("  -si --showinput   Display the input given by the user.");
         }
     }
 }
