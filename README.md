@@ -9,7 +9,13 @@
 ### ❓ How to use
 
 ~~~shell
-$ Runned.exe [<your command>]
+USAGE: Runned.exe <your commands>
+
+OPTIONS:
+  -ec --exitcode    # Display the exit code of the executed command.
+  -no --nooutput    # Disable the output.
+  -td --timedetail  # Add more detail to the elapsed time.
+  -si --showinput   # Display the input given by the user.
 ~~~
 
 ### ❓ How to build
