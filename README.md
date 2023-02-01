@@ -8,38 +8,32 @@
 
 ### ❓ How to use
 
-~~~shell
+~~~
 USAGE: Runned.exe <your commands>
 
 OPTIONS:
   -ec --exitcode    # Display the exit code of the executed command.
-  -no --nooutput    # Disable the output.
-  -td --timedetail  # Add more detail to the elapsed time.
   -si --showinput   # Display the input given by the user.
 ~~~
 
 ### ❓ How to build
 
-The simple way to build the project is to use Visual Studio, you just need to open the sln or csproj file and then make a build or run the project.
+To build, you will first need to download the nim compiler. You can find it [here](https://nim-lang.org/install.html).
 
-<details> <summary>Build manualy</summary>
-<p>If you want to build manualy, you will need to install the latest dotnet SDK <a href="https://dotnet.microsoft.com/en-us/download">here</a>.</p>
-
-<p>Then you just need to run the following cli command. You will need to choose your OS if you want to run it.</p>
+Then, run the following command. You will need to change the os and cpu type to math your computer.
 
 ```shell
-# windows
-$ dotnet publish -c Release -o ./Build -r win-x64 --self-contained true
-$ dotnet publish -c Release -o ./Build -r win-x86 --self-contained true
+$ nim compile --define:release --opt:speed --app:console --os:<your os> --cpu:<your cpu> Runned.nim
 
-# linux
-$ dotnet publish -c Release -o ./Build -r linux-x64 --self-contained true
-$ dotnet publish -c Release -o ./Build -r linux-arm --self-contained true
-
-# macos
-$ dotnet publish -c Release -o ./Build -r osx-x64 --self-contained true
+# windows: i386;amd64
+# linux: i386;amd64;powerpc64;arm;sparc;mips;powerpc
+# macosx: i386;amd64;powerpc64
+# solaris: i386;amd64;sparc
+# freebsd: i386;amd64
+# netbsd: i386;amd64
+# openbsd: i386;amd64
+# haiku: i386;amd64
+# android: arm
 ```
 
-</details>
-
-If you want to download a build, check the <a href="./Build/">Build</a> folder.
+If you want to download a build, check the <a href="./Build/">Build</a> folder. For now, there is only a windows build because it's hard to build for multiple platform without owning one of them.
