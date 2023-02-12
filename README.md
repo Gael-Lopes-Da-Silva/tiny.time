@@ -24,6 +24,10 @@ Then, run the following command. You will need to change the os and cpu type to 
 
 ```shell
 $ nimble install --define:release --opt:speed --app:console
+
+# or
+
+$ nimble install runned
 ```
 
 If you want to download a build, check the <a href="./Build/">Build</a> folder. For now, there is only a windows build because it's hard to build for multiple platform without owning one of them.
