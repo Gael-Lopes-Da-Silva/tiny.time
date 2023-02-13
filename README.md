@@ -1,13 +1,16 @@
-<h3 align="center">Runned</h3>
+<h3 align="center">
+    Runned
+</h3>
 
 ---
 
-<p align="center">:gear: Runned is a simple tool to check the execution time of terminal commands.</p>
+<p align="center">
+    :gear: Runned is a simple tool to check the execution time of terminal commands.
+</p>
 
 ---
 
 ### :question: How to use
-
 ~~~
 USAGE: Runned.exe <your commands>
 
@@ -17,12 +20,11 @@ OPTIONS:
 ~~~
 
 ### :question: How to build
-
 To build, you will first need to download the nim compiler. You can find it [here](https://nim-lang.org/install.html).
 
 Then, run the following command. You will need to change the os and cpu type to math your computer.
 
-```shell
+```console
 $ nimble install --define:release --opt:speed --app:console
 
 # or
@@ -30,4 +32,4 @@ $ nimble install --define:release --opt:speed --app:console
 $ nimble install runned
 ```
 
-If you want to download a build, check the <a href="./Build/">Build</a> folder. For now, there is only a windows build because it's hard to build for multiple platform without owning one of them.
+If you want to download a build, check the [Build](./Build/) folder. For now, there is only a windows build because it's hard to build for multiple platform without owning one of them.
