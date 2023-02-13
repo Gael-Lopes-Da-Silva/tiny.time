@@ -7,8 +7,9 @@
 
 import std/[os, terminal, strutils, times]
 
-var exitCode: bool = false
-var showInput: bool = false
+var
+  exitCode: bool = false
+  showInput: bool = false
 
 proc echoColorLine(messageType: string, message: string, color: ForegroundColor, bright: bool): void =
   stdout.setForegroundColor(color, bright)
@@ -23,9 +24,10 @@ proc echoColor(messageType: string, color: ForegroundColor, bright: bool): void 
   stdout.write(":\n")
 
 proc executeCommand(commands: string): int =
-  let timerStart: float = cpuTime()
-  let returnValue: int = execShellCmd(commands)
-  let timerEnd: float = cpuTime() - timerStart
+  let
+    timerStart: float = cpuTime()
+    returnValue: int = execShellCmd(commands)
+    timerEnd: float = cpuTime() - timerStart
   
   echoColorLine "\ntime", $timerEnd & " s", fgGreen, false
 
