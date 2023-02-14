@@ -32,4 +32,4 @@ $ nimble install --define:release --opt:speed --app:console
 $ nimble install runned
 ```
 
-If you want to download a build, check the [Build](./Build/) folder. For now, there is only a windows build because it's hard to build for multiple platform without owning one of them.
+If you want to download a build, check the [build](./build/) folder. For now, there is only a windows build because it's hard to build for multiple platform without owning one of them.
