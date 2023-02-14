@@ -5,12 +5,12 @@
 ---
 
 <p align="center">
-    :gear: Runned is a simple tool to check the execution time of terminal commands.
+    ⚙️ Runned is a simple tool to check the execution time of terminal commands.
 </p>
 
 ---
 
-### :question: How to use
+### ❓ How to use
 ~~~
 USAGE: Runned.exe <your commands>
 
@@ -19,7 +19,7 @@ OPTIONS:
   -si --showinput   # Display the input given by the user.
 ~~~
 
-### :question: How to build
+### ❓ How to build
 To build, you will first need to download the nim compiler. You can find it [here](https://nim-lang.org/install.html).
 
 Then, run the following command. You will need to change the os and cpu type to math your computer.
