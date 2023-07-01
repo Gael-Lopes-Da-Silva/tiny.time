@@ -5,31 +5,38 @@
 ---
 
 <p align="center">
-    ⚙️ Runned is a simple tool to check the execution time of terminal commands.
+    ⚙️ Runned is a simple tool to check the execution time of terminal commands on Windows.
 </p>
 
 ---
 
+### 🖼 Screenshot
+![screenshot_1](img/screenshot_1.png)
+![screenshot_2](img/screenshot_2.png)
+
 ### ❓ How to use
 ~~~
-USAGE: Runned.exe <your commands>
+USAGE: runned.exe <your commands>
 
 OPTIONS:
-  -ec --exitcode    # Display the exit code of the executed command.
-  -si --showinput   # Display the input given by the user.
+  -e --exitcode    Display the exit code of the executed command.
+  -i --input       Display the input given by the user.
+  -a --accuracy    Display time with more precision.
 ~~~
 
-### ❓ How to build
-To build, you will first need to download the nim compiler. You can find it [here](https://nim-lang.org/install.html).
-
-Then, run the following command. You will need to change the os and cpu type to math your computer.
+### ❓ How to run or buidl
+To run, you will need to download the lua interpreter. You can find it [here](https://luabinaries.sourceforge.net/download.html). <br>
+Then, run the following command:
 
 ```console
-$ nimble install --define:release --opt:speed --app:console
-
-# or
-
-$ nimble install runned
+$ lua .\src\runned.lua
 ```
 
-If you want to download a build, check the [build](./build/) folder. For now, there is only a windows build because it's hard to build for multiple platform without owning one of them.
+To build, you will need to download a lua compiler. You can find the one I use [here](https://github.com/samyeyo/rtc). <br>
+Then, run the following command:
+
+```console
+$ rtc -s -c -o .\build\runned.exe .\src\runned.lua
+```
+
+If you want to download a build, check the [build](./build/) folder.
