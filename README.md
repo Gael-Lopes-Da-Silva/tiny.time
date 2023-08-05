@@ -5,38 +5,31 @@
 ---
 
 <p align="center">
-    ⚙️ Runned is a simple tool to check the execution time of terminal commands on Windows.
+    :gear: Runned is a simple tool to check the execution time of terminal commands or applications launched in the terminal.
 </p>
 
 ---
 
-### 🖼 Screenshot
-![screenshot_1](img/screenshot_1.png)
-![screenshot_2](img/screenshot_2.png)
-
-### ❓ How to use
+### :question: How to use
 ~~~
-USAGE: runned.exe <your commands>
-
-OPTIONS:
-  -e --exitcode    Display the exit code of the executed command.
-  -i --input       Display the input given by the user.
-  -a --accuracy    Display time with more precision.
+runned your_command
+runned --version  or -v      # Print the version
+runned --github   or -g      # Give the GitHub link
+runned --exitcode or -e      # Display the exit code of the executed command or application
+runned --input    or -i      # Display the input given by the user
 ~~~
 
-### ❓ How to run or buidl
-To run, you will need to download the lua interpreter. You can find it [here](https://luabinaries.sourceforge.net/download.html). <br>
-Then, run the following command:
+### :question: How to build
+To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
 
-```console
-$ lua .\src\runned.lua
-```
+If you want a precompiled executable, run this.
+~~~console
+go install github.com/gael-lopes-da-silva/runned
+~~~
 
-To build, you will need to download a lua compiler. You can find the one I use [here](https://github.com/samyeyo/rtc). <br>
-Then, run the following command:
-
-```console
-$ rtc -s -c -o .\build\runned.exe .\src\runned.lua
-```
-
-If you want to download a build, check the [build](./build/) folder.
+If you want to build the application from the source, run this.
+~~~console
+git clone https://github.com/Gael-Lopes-Da-Silva/Runned
+cd Brainfuck
+go build .
+~~~
