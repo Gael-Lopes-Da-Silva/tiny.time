@@ -24,7 +24,7 @@ To build the interpreter you will first need to download the Go compiler [here](
 
 If you want a precompiled executable, run this.
 ~~~console
-go install github.com/gael-lopes-da-silva/runned
+go install github.com/gael-lopes-da-silva/runned@latest
 ~~~
 
 If you want to build the application from the source, run this.
