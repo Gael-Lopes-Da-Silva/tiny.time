@@ -1,3 +1,7 @@
+// @author: Gael Lopes Da Silva
+// @project: Runned
+// @github: https://github.com/Gael-Lopes-Da-Silva/Runned
+
 package main
 
 import (
