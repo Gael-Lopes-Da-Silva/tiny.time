@@ -4,9 +4,8 @@
 
 ---
 
-<p align="center">
-    :gear: Runned is a simple tool to check the execution time of terminal commands or applications launched in the terminal.
-</p>
+> [!NOTE]
+> Runned is a simple tool to check the execution time of terminal commands or applications launched in the terminal.
 
 ---
 
@@ -20,7 +19,8 @@ runned --input    or -i      # Display the input given by the user
 ~~~
 
 ### :question: How to build
-To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
+> [!IMPORTANT]
+> To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
 
 If you want a precompiled executable, run this.
 ~~~console
