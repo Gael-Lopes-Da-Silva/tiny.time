@@ -1,9 +1,8 @@
-<h1 align="center">
-    Runned
-</h1>
+<div align="center">
+	<h1>Runned</h1>
+</div>
 
-> [!NOTE]
-> Runned is a simple tool to check the execution time of terminal commands or applications launched in the terminal.
+### 🗒️ Runned is a simple tool to check the execution time of terminal commands or applications launched in the terminal.
 
 ## ❓ How to use
 ~~~
@@ -15,8 +14,7 @@ runned --input    or -i      # Display the input given by the user
 ~~~
 
 ## ❓ How to build
-> [!IMPORTANT]
-> To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
+### ❗ To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
 
 If you want a precompiled executable, run this.
 ~~~shell
