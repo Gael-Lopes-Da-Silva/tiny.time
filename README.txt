@@ -13,7 +13,8 @@ Usage
 runned your_command
 runned --version  or -v      # Print the version
 runned --github   or -g      # Give the GitHub link
-runned --exitcode or -e      # Display the exit code of the executed command or application
+runned --exitcode or -e      # Display the exit code of the
+                               executed command or application
 runned --input    or -i      # Display the input given by the user
 
 
