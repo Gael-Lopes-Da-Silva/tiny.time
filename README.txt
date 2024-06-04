@@ -3,6 +3,7 @@
 
 Description
 ------------------------------------------------------------------
+
 Runned is a simple tool to check the execution time of terminal
 commands or applications launched in the terminal.
 
