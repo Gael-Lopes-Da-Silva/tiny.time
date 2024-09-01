@@ -33,5 +33,5 @@ Make sure to have a ready to use installation of rust. More info [here](https://
 ~~~
 git clone https://github.com/Gael-Lopes-Da-Silva/tiny.time.git
 cd tiny.time
-cargo build
+cargo build --release
 ~~~
